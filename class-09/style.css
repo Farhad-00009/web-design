@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Common css end */
+
+/* Menu part start */
+/* .main_menu{
+    height: 60px;
+    background: red;
+}
+
+.main_menu ul li{
+    float: left;
+    position: relative;
+}
+
+.main_menu ul li a{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: sans-serif;
+    padding: 0 15px;
+    line-height: 60px;
+    text-transform: uppercase;
+    transition: all linear .3s;
+    -webkit-transition: all linear .3s;
+    -moz-transition: all linear .3s;
+    -o-transition: all linear .3s;
+    -ms-transition: all linear .3s;
+    display: block;
+}
+
+.main_menu ul li:hover{
+    background: yellow;
+}
+
+.main_menu ul li a:hover{
+    color: blue;
+}
+
+.main_menu ul li ul{
+    position: absolute;
+    left: 0;
+    background: purple;
+    width: 250px;
+    visibility: hidden;
+    transition: all linear .3s;
+    -webkit-transition: all linear .3s;
+    -moz-transition: all linear .3s;
+    -o-transition: all linear .3s;
+    -ms-transition: all linear .3s;
+    opacity: 0;
+    text-align: center;
+}
+
+.main_menu ul li ul li{
+    width: 100%;
+}
+
+.main_menu ul li:hover > ul{
+    visibility: visible;
+    opacity: 1;
+}
+
+.main_menu ul li ul li ul{
+    left: 100%;
+    top: 0;
+}
+ */
+
+
+
+/* Menu part end */
+
+.main_menu {
+    height: 60px;
+    background: purple;
+}
+
+
+.main_menu ul li {
+    float: left;
+    position: relative;
+}
+
+.main_menu ul li a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: fantasy;
+    text-transform: uppercase;
+    padding: 0 20px;
+    line-height: 60px;
+    display: block;
+    transition: all linear .3s;
+    -webkit-transition: all linear .3s;
+    -moz-transition: all linear .3s;
+    -o-transition: all linear .3s;
+    -ms-transition: all linear .3s;
+}
+
+.main_menu ul li a:hover {
+    color: red;
+    background: yellow;
+}
+
+.main_menu ul li ul {
+    position: absolute;
+    width: 200px;
+    background: #5c2d02;
+    visibility: hidden;
+    opacity: 0;
+    transition: all linear .3s;
+    -webkit-transition: all linear .3s;
+    -moz-transition: all linear .3s;
+    -o-transition: all linear .3s;
+    -ms-transition: all linear .3s;
+}
+
+.main_menu ul li ul li{
+    width: 100%;
+}
+
+.main_menu ul li:hover > ul{
+    visibility: visible;
+    opacity: 1;
+}
+
+.main_menu ul li ul li ul{
+    left: 100%;
+    top: 0;
+}
