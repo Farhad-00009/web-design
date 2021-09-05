@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Myprogram.java</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #000000; background-color: #ffffff; font-family: Monospaced; font-weight: bold}
+pre {color: #000000; background-color: #ffffff; font-family: Monospaced; font-weight: bold}
+table {color: #000000; background-color: #e9e8e2; font-family: Monospaced; font-weight: bold}
+.literal {color: #0000e6}
+.comment {color: #969696}
+.ST0 {color: #009900}
+.ST1 {color: #009900; font-family: Monospaced; font-weight: bold; font-style: italic}
+.ST2 {font-family: Monospaced; font-weight: bold; font-style: italic}
+.string {color: #ce7b00}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">C:\Users\Administrator\Documents\NetBeansProjects\dijkstraexample\src\sub\cse\Myprogram.java</td></tr></table>
+<pre>
+
+<span class="literal">package</span> sub.cse;
+<span class="literal">import</span> java.util.*;
+<span class="comment">////////////////////////////////</span>
+<span class="literal">class</span> Graph {
+    <span class="literal">double</span> [][] <span class="ST0">weight</span>;
+    <span class="literal">int</span> <span class="ST0">n</span> ;
+    <span class="literal">boolean</span> [] <span class="ST0">included</span>;
+    <span class="literal">double</span> [] <span class="ST0">dist</span>;
+    <span class="literal">int</span> <span class="ST0">source</span>=-1;
+    
+    Graph(<span class="literal">int</span> total){
+        <span class="ST0">n</span> = total;
+        <span class="ST0">weight</span> = <span class="literal">new</span> <span class="literal">double</span>[<span class="ST0">n</span>][<span class="ST0">n</span>];
+        <span class="ST0">included</span> = <span class="literal">new</span> <span class="literal">boolean</span>[<span class="ST0">n</span>];
+        <span class="ST0">dist</span> = <span class="literal">new</span> <span class="literal">double</span>[<span class="ST0">n</span>];
+        
+        <span class="literal">int</span> i, j;
+        <span class="literal">for</span> (i=0; i&lt;<span class="ST0">n</span>; i++)
+            <span class="literal">for</span> (j=0; j&lt;<span class="ST0">n</span>; j++)
+                <span class="ST0">weight</span>[i][j] = Double.<span class="ST1">MAX_VALUE</span>; <span class="comment">// infinity</span>
+    }  <span class="comment">// constructor</span>
+    
+    <span class="literal">void</span> inputGraphdata()
+    {
+        <span class="literal">int</span> i, j;
+        <span class="literal">double</span> weightdata;
+        Scanner s = <span class="literal">new</span> Scanner(System.<span class="ST1">in</span>);
+        <span class="literal">for</span>( ;  ; ){
+            System.<span class="ST1">out</span>.println(<span class="string">&quot;</span><span class="string">give values of i, j, weightdata. Enter invalid data to exit input</span><span class="string">&quot;</span>);
+            
+            i = s.nextInt();
+            <span class="literal">if</span> (i&lt;0 || i&gt;=<span class="ST0">n</span>) <span class="literal">break</span>;
+            
+            j = s.nextInt();
+            <span class="literal">if</span> (j&lt;0 || j&gt;=<span class="ST0">n</span>) <span class="literal">break</span>;            
+            
+            weightdata = s.nextDouble();
+            <span class="literal">if</span> (weightdata&lt;0) <span class="literal">break</span>;
+            
+            <span class="ST0">weight</span>[i][j] = weightdata;
+            <span class="ST0">weight</span>[j][i] = weightdata;
+        } <span class="comment">// loop</span>
+        
+    }<span class="comment">// end of inputgraphdata method</span>
+    
+    <span class="literal">int</span> findMinindex(){
+        <span class="literal">double</span> min = Double.<span class="ST1">MAX_VALUE</span>;
+        <span class="literal">int</span> minindex=-1;
+        <span class="literal">int</span> i;
+        <span class="literal">for</span>(i=0; i&lt;<span class="ST0">n</span>; i++)
+            <span class="literal">if</span> (<span class="ST0">included</span>[i]== <span class="literal">false</span> &amp;&amp; <span class="ST0">dist</span>[i]&lt;min){
+                minindex=i;
+                min = <span class="ST0">dist</span>[i];
+            } <span class="comment">// if</span>
+    <span class="literal">return</span> minindex;    
+    }
+    
+    <span class="literal">void</span> dijkstra(<span class="literal">int</span> sourceindex){
+     <span class="ST0">source</span> =sourceindex;
+     Arrays.<span class="ST2">fill</span>(<span class="ST0">dist</span>, Double.<span class="ST1">MAX_VALUE</span>); <span class="comment">// all infinity</span>
+     <span class="ST0">dist</span>[<span class="ST0">source</span>] = 0.0;
+     
+     Arrays.<span class="ST2">fill</span>(<span class="ST0">included</span>, <span class="literal">false</span>);
+     
+     <span class="literal">int</span> u, v, count;
+     <span class="literal">double</span> x;
+     <span class="comment">// all nodes</span>
+     <span class="literal">for</span>(count=0; count&lt;<span class="ST0">n</span>; count++){
+         u = findMinindex();
+         <span class="ST0">included</span>[u]= <span class="literal">true</span>;
+         <span class="literal">for</span>(v=0; v&lt;<span class="ST0">n</span>; v++){
+             x = <span class="ST0">dist</span>[u] + <span class="ST0">weight</span>[u][v];
+             <span class="literal">if</span> (<span class="ST0">included</span>[v] == <span class="literal">false</span>
+                 &amp;&amp; <span class="ST0">weight</span>[u][v]!= Double.<span class="ST1">MAX_VALUE</span>
+                 &amp;&amp; x&lt;<span class="ST0">dist</span>[v])
+                 <span class="ST0">dist</span>[v] = x;
+         } <span class="comment">// v loop</span>
+     } <span class="comment">// loop count</span>
+    } <span class="comment">// dijkstra method</span>
+    
+    <span class="literal">void</span> print() {
+        <span class="literal">double</span> distance;
+        <span class="literal">int</span> i;
+        <span class="literal">for</span> (i=0; i&lt;<span class="ST0">n</span>; i++){
+            distance = <span class="ST0">dist</span>[i];
+            <span class="literal">if</span> (distance&lt;Double.<span class="ST1">MAX_VALUE</span>)
+                System.<span class="ST1">out</span>.println(<span class="string">&quot;</span><span class="string">From </span><span class="string">&quot;</span> 
+                                    + <span class="ST0">source</span> 
+                                    + <span class="string">&quot;</span><span class="string"> to node </span><span class="string">&quot;</span> 
+                                    + i 
+                                    + <span class="string">&quot;</span><span class="string"> = </span><span class="string">&quot;</span> 
+                                    + distance);
+            <span class="literal">else</span>
+                System.<span class="ST1">out</span>.println(<span class="string">&quot;</span><span class="string"> No connection between </span><span class="string">&quot;</span> + <span class="ST0">source</span>
+                                   + <span class="string">&quot;</span><span class="string"> and </span><span class="string">&quot;</span> + i );
+        } <span class="comment">// loop i</span>
+        
+    } <span class="comment">// print method</span>
+    
+}<span class="comment">// end of Graph class</span>
+
+<span class="comment">///////////////////////////////////////</span>
+
+
+<span class="literal">public</span> <span class="literal">class</span> Myprogram {
+
+
+    <span class="literal">public</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST2">main</span>(String[] args) {
+    <span class="literal">int</span> total, sourceindex;
+    Scanner s1 = <span class="literal">new</span> Scanner(System.<span class="ST1">in</span>);
+
+    System.<span class="ST1">out</span>.println(<span class="string">&quot;</span><span class="string">How many nodes?</span><span class="string">&quot;</span>);
+    total = s1.nextInt();
+
+    Graph g = <span class="literal">new</span> Graph(total);
+    g.inputGraphdata();
+
+    System.<span class="ST1">out</span>.println(<span class="string">&quot;</span><span class="string">Enter source index</span><span class="string">&quot;</span>);
+    sourceindex = s1.nextInt();
+    g.dijkstra(sourceindex);
+    g.print();
+    } <span class="comment">// main</span>
+}<span class="comment">// myprogram class</span>
+
+</pre></body>
+</html>
