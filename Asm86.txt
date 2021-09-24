@@ -1,0 +1,1 @@
+({emulatorVersion:1,code:"MOV AX,59D6H",variables:[],eeprom:[]})
