@@ -1,0 +1,50 @@
+.main{
+    border: 3px solid green;
+    padding: 10px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.one{
+    background: blue;
+    padding: 10px;
+    order: -2;
+}
+
+.two{
+    background: green;
+    padding: 10px;
+    order: 3;
+}
+
+.three{
+    background: yellow;
+    padding: 10px;
+}
+
+.four{
+    background: pink;
+    padding: 10px;
+    order: 2;
+}
+
+.five{
+    background: purple;
+    padding: 10px;
+    order: -1;
+}
+
+
+
+.main_menu{
+    height: 100px;
+    background: red;
+}
+
+.main_menu ul{
+    display: flex;
+    justify-content: center;
+}
+
+
+
