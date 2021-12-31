@@ -1,0 +1,267 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+ul,ol{
+    list-style: none;
+}
+
+a,span{
+    display: inline-block;
+    text-decoration: none;
+}
+
+img{
+    vertical-align: middle;
+}
+
+.container{
+    margin: 0 auto;
+    max-width: 1170px;
+}
+
+/* ===============================================
+            Common css end
+================================================*/
+
+/* ===============================================
+            Menu part start
+================================================*/
+#menu_part{
+    padding: 34px 0;
+    background: rgba(0, 0, 0, 0.44);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+.menu_cont{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.logo{
+    width: 150px;
+}
+
+.main_menu{
+    width: 875px;
+}
+
+.menu_social{
+    width: 145px;
+}
+
+.main_menu ul{
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.main_menu ul li a{
+    color: #fff;
+    margin-left: 44px;
+    text-transform: uppercase;
+}
+
+.menu_social{
+    position: relative;
+}
+
+.menu_social::after {
+	position: absolute;
+	content: '';
+	left: 25px;
+	top: -6px;
+	width: 1px;
+	height: 30px;
+	background: blue;
+}
+
+.menu_social ul{
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* ===============================================
+            Menu part end
+================================================*/
+
+/* ===============================================
+            Banner part start
+================================================*/
+#banner_part{
+    background: url(../images/banner.jpg) no-repeat center;
+    background-size: cover;
+    padding: 331px 0 252px;
+}
+
+.banner_text{
+    text-align: center;
+    color: #fff;
+}
+
+/* ===============================================
+            Banner part end
+================================================*/
+
+/* ===============================================
+            Service part start
+================================================*/
+#service_part{
+    padding: 80px 0;
+    text-align: center;
+}
+
+.service_btm_row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ser_col {
+	flex-basis: 31.62%;
+	flex-grow: 1;
+    margin-right: 30px;
+    border: 1px solid red;
+    padding: 15px;
+}
+
+.ser_col:last-child{
+    margin-right: 0;
+}
+
+.service_img img{
+    width: 100%;
+    max-width: 100%;
+}
+/* ===============================================
+            Service part end
+================================================*/
+
+/* ===============================================
+            Instagram part start
+================================================*/
+#insta_part{
+    background: #2c2c2c;
+    padding: 80px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.insta_head{
+    position: relative;
+    display: inline-block;
+}
+
+.insta_head h2{
+    position: relative;
+    display: inline-block;
+}
+
+
+.insta_head h2::after {
+	position: absolute;
+	content: '';
+	left: -115px;
+	top: 10px;
+	width: 100px;
+	height: 1px;
+	background: red;
+}
+
+.insta_head h2::before {
+	position: absolute;
+	content: '';
+	left: -115px;
+	bottom: 10px;
+	width: 100px;
+	height: 1px;
+	background: red;
+}
+
+.insta_head::after {
+	position: absolute;
+	content: '';
+	right: -115px;
+	top: 10px;
+	width: 100px;
+	height: 1px;
+	background: red;
+}
+
+.insta_head::before {
+	position: absolute;
+	content: '';
+	right: -115px;
+	bottom: 10px;
+	width: 100px;
+	height: 1px;
+	background: red;
+}
+
+.insta_inner{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.insta_col{
+    flex-basis: 24%;
+    margin-right: 15px;
+    flex-grow: 1;
+}
+
+.insta_col img{
+    width: 100%;
+    max-width: 100%;
+}
+
+.insta_col:first-child{
+    margin-left: 15px;
+}
+
+.insta_btn a{
+    padding: 20px 16px;
+    border: 1px solid red;
+    margin-top: 30px;
+}
+
+/* ===============================================
+            Instagram part end
+================================================*/
+
+/* ===============================================
+            Menu part start
+================================================*/
+
+/* ===============================================
+            Menu part end
+================================================*/
+
+/* ===============================================
+            Menu part start
+================================================*/
+
+/* ===============================================
+            Menu part end
+================================================*/
+
+/* ===============================================
+            Menu part start
+================================================*/
+
+/* ===============================================
+            Menu part end
+================================================*/
+
+/* ===============================================
+            Menu part start
+================================================*/
+
+/* ===============================================
+            Menu part end
+================================================*/
